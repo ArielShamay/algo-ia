@@ -1,82 +1,178 @@
-# Project Title: Graph Algorithm Visualization
+# 📊 ויזואליזציית אלגוריתמי גרפים
 
-## Overview
+פרויקט אינטראקטיבי לויזואליזציה של אלגוריתמים על גרפים, בנוי עם TypeScript ו-React.
 
-This project is a web application designed to visualize various graph algorithms. Built using TypeScript and React, it allows users to interact with graph data and see the results of different algorithms in real-time.
+## 🎯 מטרת הפרויקט
 
-## Features
+אפליקציית web המאפשרת:
 
-- **Graph Visualization**: Display graphs in both matrix and node-edge formats.
-- **Algorithm Implementation**: Includes implementations for various graph algorithms such as:
-  - Depth-First Search (DFS)
-  - Breadth-First Search (BFS)
-  - Bellman-Ford for shortest paths
-  - Cycle detection
-  - Bipartite checking
-- **Random Graph Generation**: Ability to generate random graphs based on user-defined parameters.
+- **הצגה ויזואלית** של גרפים (מכוונים/לא מכוונים)
+- **הרצת אלגוריתמים** על גרפים בזמן אמת
+- **יצירת גרפים** באופן רנדומלי או טעינה מ-JSON
+- **למידה אינטראקטיבית** של אלגוריתמי גרפים
 
-## Project Structure
+## ✨ תכונות
 
-```
-algo-ia
-├── src
-│   ├── core
-│   │   ├── Graph.ts          # Class for managing graph data
-│   │   ├── Algorithms.ts     # Static methods for graph algorithms
-│   │   └── types.ts          # Type definitions and interfaces
-│   ├── components
-│   │   ├── GraphVisualizer.tsx # Main component for graph display
-│   │   ├── MatrixView.tsx    # Component for displaying adjacency matrix
-│   │   └── NodeEdgeView.tsx  # Component for rendering graph with SVG
-│   ├── App.tsx               # Main application component
-│   └── index.tsx             # Entry point for the React application
-├── public
-│   └── index.html            # Main HTML file
-├── tests
-│   ├── core
-│   │   ├── Graph.test.ts     # Unit tests for Graph class
-│   │   └── Algorithms.test.ts # Unit tests for Algorithms class
-│   └── components
-│       └── GraphVisualizer.test.tsx # Unit tests for GraphVisualizer component
-├── package.json               # Project dependencies and scripts
-├── tsconfig.json              # TypeScript configuration
-├── jest.config.js             # Jest configuration for testing
-├── .eslintrc.js               # ESLint configuration
-├── .prettierrc                # Prettier configuration
-└── README.md                  # Project documentation
-```
+### אלגוריתמים מיושמים
 
-## Getting Started
+- 🔗 **בדיקת קשירות** (BFS/DFS)
+- 🛤️ **מסלול קצר ביותר** (Bellman-Ford) — תומך במשקלים שליליים
+- 🔄 **זיהוי מעגלים** (DFS)
+- ⚖️ **בדיקת דו-צדדיות** (BFS עם צביעה)
+- ⚠️ **זיהוי מעגלים שליליים** (Bellman-Ford)
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```
-   cd algo-ia
-   ```
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Start the development server:
-   ```
-   npm start
-   ```
+### תצוגות
 
-## Testing
+- 📊 **תצוגת מטריצת שכנויות** — טבלה מעוצבת
+- 🎨 **תצוגת גרף ויזואלית** — SVG עם קודקודים וקשתות
+- 🔄 מעבר חלק בין התצוגות
 
-To run the tests, use the following command:
+## 🚀 התחלה מהירה
 
-```
+### דרישות מקדימות
+
+- Node.js 18+
+- npm או yarn
+
+### התקנה והרצה
+
+```powershell
+# שכפול הפרויקט
+git clone https://github.com/ArielShamay/algo-ia.git
+cd algo-ia
+
+# התקנת תלויות
+npm install
+
+# הרצה במצב פיתוח
+npm run dev
+
+# בנייה לייצור
+npm run build
+
+# הרצת בדיקות
 npm test
 ```
 
-## Contributing
+## 📁 מבנה הפרויקט
 
-Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
+```
+algo-ia/
+├── docs/
+│   ├── BUILD_INSTRUCTIONS.md  # הוראות בנייה מפורטות (7 שלבים)
+│   └── ARCHITECTURE.md         # תיאור ארכיטקטוני מלא
+├── src/
+│   ├── core/
+│   │   ├── types.ts           # הגדרות טיפוסים וממשקים
+│   │   ├── Graph.ts           # מחלקת Graph (ניהול נתוני גרף)
+│   │   └── Algorithms.ts      # אלגוריתמים על גרפים
+│   ├── components/
+│   │   ├── GraphVisualizer.tsx  # רכיב ראשי להצגת גרף
+│   │   ├── MatrixView.tsx       # תצוגת מטריצה
+│   │   └── NodeEdgeView.tsx     # תצוגת גרף (SVG)
+│   ├── App.tsx                  # רכיב אפליקציה ראשי
+│   └── main.tsx                 # Entry point
+├── tests/
+│   └── core/
+│       ├── Graph.test.ts
+│       └── Algorithms.test.ts
+└── public/
+    └── index.html
+```
 
-## License
+## 📚 מסמכים חשובים
 
-This project is licensed under the MIT License.
+- **[הוראות בנייה](docs/BUILD_INSTRUCTIONS.md)** — מדריך מפורט ל-7 שלבי הבנייה (לסוכנים ומפתחים)
+- **[ארכיטקטורה](docs/ARCHITECTURE.md)** — עקרונות עיצוב, מבנה, ושיקולים טכניים
+
+## 🎮 שימוש באפליקציה
+
+### טעינת גרף
+
+1. הזן מטריצת שכנויות בפורמט JSON:
+   ```json
+   [
+     [0, 1, 0],
+     [0, 0, 1],
+     [0, 0, 0]
+   ]
+   ```
+2. לחץ על "טען גרף"
+
+### יצירת גרף רנדומלי
+
+- לחץ על "צור גרף רנדומלי" ליצירת גרף אוטומטית
+
+### הרצת אלגוריתמים
+
+- בחר אלגוריתם מרשימת הכפתורים
+- התוצאות יוצגו בפורמט JSON
+
+### החלפת תצוגות
+
+- השתמש בכפתורים למעלה למעבר בין תצוגת מטריצה לתצוגת גרף
+
+## 🧪 בדיקות
+
+```powershell
+# הרצת כל הבדיקות
+npm test
+
+# הרצה עם כיסוי
+npm test -- --coverage
+
+# הרצת בדיקה ספציפית
+npm test Graph.test.ts
+```
+
+## 🛠️ Scripts זמינים
+
+| Script           | תיאור                  |
+| ---------------- | ---------------------- |
+| `npm run dev`    | הרצת dev server (Vite) |
+| `npm run build`  | בנייה לייצור           |
+| `npm run test`   | הרצת בדיקות (Vitest)   |
+| `npm run lint`   | בדיקת ESLint           |
+| `npm run format` | עיצוב קוד עם Prettier  |
+
+## 🏗️ פיתוח
+
+### סדר בנייה מומלץ
+
+הפרויקט מחולק ל-7 שלבים (0-6). לפרטים מלאים ראה [BUILD_INSTRUCTIONS.md](docs/BUILD_INSTRUCTIONS.md):
+
+0. **תשתית** — TypeScript, React, Testing, CI/CD
+1. **טיפוסים ו-Graph API** — types.ts, Graph.ts
+2. **אלגוריתמים** — Algorithms.ts
+3. **רכיבי UI** — Components
+4. **אינטגרציה** — App.tsx, State Management
+5. **בדיקות** — E2E, Performance
+6. **דוקומנטציה** — README, Examples
+
+### Code Style
+
+- TypeScript strict mode מופעל
+- ESLint + Prettier לקוד אחיד
+- Type safety — אין שימוש ב-`any`
+
+## 🤝 תרומה לפרויקט
+
+נשמח לתרומות! אנא:
+
+1. צור branch חדש: `feature/<description>`
+2. עשה commit עם הודעה ברורה
+3. פתח Pull Request עם תיאור מפורט
+4. ודא שכל הבדיקות עוברות
+
+## 📄 רישיון
+
+MIT License — ראה [LICENSE](LICENSE) לפרטים
+
+## 👨‍💻 יוצר
+
+**Ariel Shamay**  
+GitHub: [@ArielShamay](https://github.com/ArielShamay)
+
+---
+
+**🎓 נבנה למטרות לימודיות** — פרויקט להדגמת אלגוריתמי גרפים בצורה ויזואלית ואינטראקטיבית

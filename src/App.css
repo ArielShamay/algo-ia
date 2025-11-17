@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    direction: rtl;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+    color: #667eea;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.app-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* תפריט צד */
+.sidebar {
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: calc(100vh - 160px);
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    color: #667eea;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 8px;
+}
+
+.section h3 {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.control-group {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* כפתורים */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-success {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-algorithm {
+    background: #4299e1;
+    color: white;
+}
+
+.btn-clear {
+    background: #f56565;
+    color: white;
+}
+
+/* שדות קלט */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    color: #555;
+    font-weight: 500;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 8px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* אזור ויזואליזציה */
+.visualization-area {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    max-height: calc(100vh - 160px);
+}
+
+.graph-info {
+    background: #f0f4ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #667eea;
+}
+
+.graph-info p {
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+.error {
+    background: #fff5f5;
+    color: #c53030;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c53030;
+}
+
+.result-panel {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #e2e8f0;
+}
+
+.result-panel h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.result-panel pre {
+    background: #2d3748;
+    color: #68d391;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        max-height: none;
+    }
+}
