@@ -38,7 +38,7 @@ const NodeEdgeView: React.FC<NodeEdgeViewProps> = ({ graph }) => {
               x2={positions[to].x}
               y2={positions[to].y}
               stroke="black"
-            />
+            />,
           );
         }
       }
@@ -55,11 +55,21 @@ const NodeEdgeView: React.FC<NodeEdgeViewProps> = ({ graph }) => {
     for (let i = 0; i < numNodes; i++) {
       nodes.push(
         <g key={`node-${i}`}>
-          <circle cx={positions[i].x} cy={positions[i].y} r={20} fill="lightblue" />
-          <text x={positions[i].x} y={positions[i].y} textAnchor="middle" dy=".35em">
+          <circle
+            cx={positions[i].x}
+            cy={positions[i].y}
+            r={20}
+            fill="lightblue"
+          />
+          <text
+            x={positions[i].x}
+            y={positions[i].y}
+            textAnchor="middle"
+            dy=".35em"
+          >
             {i}
           </text>
-        </g>
+        </g>,
       );
     }
 
