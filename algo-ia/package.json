@@ -1,0 +1,36 @@
+{
+  "name": "algo-ia",
+  "version": "1.0.0",
+  "description": "A project for visualizing graph algorithms.",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "jest": "^26.6.0",
+    "ts-jest": "^26.5.0",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/jest-dom": "^5.14.1",
+    "eslint": "^7.14.0",
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "^2.2.1"
+  },
+  "keywords": [
+    "graph",
+    "visualization",
+    "algorithms"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
