@@ -67,7 +67,7 @@ const NodeEdgeView: React.FC<NodeEdgeViewProps> = ({ graph }) => {
   };
 
   return (
-    <svg width="500" height="500">
+    <svg width="500" height="500" role="img" aria-label="Graph visualization">
       {renderEdges()}
       {renderNodes()}
     </svg>
