@@ -1,0 +1,57 @@
+/* Graph Visualizer Styling */
+.graph-visualizer {
+  width: 100%;
+}
+
+.view-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  background: #667eea;
+  color: white;
+}
+
+.toggle-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+.graph-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.no-graph {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+  font-size: 1.2rem;
+}
+
+.no-graph-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}

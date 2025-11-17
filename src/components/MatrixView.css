@@ -1,0 +1,91 @@
+/* Matrix View Styling */
+.matrix-view-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.matrix-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.matrix-table th,
+.matrix-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: center;
+  min-width: 50px;
+  font-size: 14px;
+}
+
+.matrix-table thead th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.matrix-table tbody th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: bold;
+}
+
+.matrix-table td {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.matrix-table td:hover {
+  background: #f0f8ff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+  font-weight: bold;
+}
+
+.matrix-table td.has-edge {
+  background: #e8f4f8;
+  font-weight: bold;
+  color: #333;
+}
+
+.matrix-table td.zero-weight {
+  color: #ccc;
+}
+
+.matrix-table td.negative-weight {
+  background: #ffe8e8;
+  color: #c33;
+}
+
+.matrix-table td.positive-weight {
+  background: #e8ffe8;
+  color: #363;
+}
+
+.matrix-legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
