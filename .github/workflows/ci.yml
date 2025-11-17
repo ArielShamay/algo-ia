@@ -30,11 +30,36 @@ jobs:
     - name: Lint code
       run: npm run lint
 
+    - name: Check formatting
+      run: npm run format:check
+
+    - name: Check for uncommitted changes
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "Uncommitted changes detected:"
+          git status --porcelain
+          git diff
+          echo ""
+          echo "Please commit all changes before pushing."
+          exit 1
+        fi
+
     - name: Run tests
       run: npm test -- --coverage --watchAll=false
 
     - name: Build project
       run: npm run build
+
+    - name: Check for uncommitted changes after build
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "Uncommitted changes detected after build:"
+          git status --porcelain
+          git diff
+          echo ""
+          echo "Please commit all generated files before pushing."
+          exit 1
+        fi
 
     - name: Upload coverage to Codecov
       if: matrix.node-version == '18.x'

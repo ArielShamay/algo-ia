@@ -11,7 +11,7 @@ export class Graph {
   constructor(adjacencyMatrix: number[][] = [], directed = false) {
     this.adjacencyMatrix = adjacencyMatrix;
     this.directed = directed;
-    
+
     // Validate on construction if matrix is provided
     if (adjacencyMatrix.length > 0) {
       this.validateMatrix(adjacencyMatrix);
@@ -33,14 +33,18 @@ export class Graph {
     // Check if matrix is square
     for (let i = 0; i < n; i++) {
       if (!matrix[i] || matrix[i].length !== n) {
-        throw new Error('Graph matrix must be square (same number of rows and columns).');
+        throw new Error(
+          'Graph matrix must be square (same number of rows and columns).',
+        );
       }
     }
 
     // Check for negative weights on diagonal (self-loops with negative weight)
     for (let i = 0; i < n; i++) {
       if (matrix[i][i] < 0) {
-        throw new Error(`Graph cannot have negative weights on the diagonal. Found at position [${i}][${i}].`);
+        throw new Error(
+          `Graph cannot have negative weights on the diagonal. Found at position [${i}][${i}].`,
+        );
       }
     }
 
@@ -49,10 +53,14 @@ export class Graph {
     for (let i = 0; i < n; i++) {
       for (let j = 0; j < n; j++) {
         if (iterationCount++ > MAX_ITERATIONS) {
-          throw new Error('Validation exceeded maximum iterations - matrix too large.');
+          throw new Error(
+            'Validation exceeded maximum iterations - matrix too large.',
+          );
         }
         if (typeof matrix[i][j] !== 'number' || isNaN(matrix[i][j])) {
-          throw new Error(`Invalid value at position [${i}][${j}]. All values must be numbers.`);
+          throw new Error(
+            `Invalid value at position [${i}][${j}]. All values must be numbers.`,
+          );
         }
       }
     }
@@ -97,7 +105,7 @@ export class Graph {
     const rng = seed !== undefined ? seedrandom(seed.toString()) : Math.random;
 
     const matrix: number[][] = Array.from({ length: vertices }, () =>
-      Array(vertices).fill(0)
+      Array(vertices).fill(0),
     );
 
     const maxIterations = vertices * vertices * 2; // Safety limit
@@ -123,7 +131,7 @@ export class Graph {
 
         // Generate random value once for both checks
         const edgeRandom = rng();
-        
+
         // Add edge based on density
         if (edgeRandom < density) {
           const weightRandom = rng();
@@ -157,7 +165,7 @@ export class Graph {
 
     const neighbors: number[] = [];
     const row = this.adjacencyMatrix[node];
-    
+
     let iterationCount = 0;
     for (let i = 0; i < row.length; i++) {
       if (iterationCount++ > MAX_ITERATIONS) {
@@ -220,7 +228,7 @@ export class Graph {
   isSymmetric(): boolean {
     const n = this.adjacencyMatrix.length;
     let iterationCount = 0;
-    
+
     for (let i = 0; i < n; i++) {
       for (let j = i + 1; j < n; j++) {
         if (iterationCount++ > MAX_ITERATIONS) {
