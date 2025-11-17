@@ -1,0 +1,190 @@
+/* Node Edge View Styling */
+.node-edge-view-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.graph-svg {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+}
+
+.graph-svg:active {
+  cursor: grabbing;
+}
+
+/* Edge Styles */
+.edge {
+  stroke: #666;
+  stroke-width: 2;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.edge:hover {
+  stroke: #667eea;
+  stroke-width: 3;
+  cursor: pointer;
+}
+
+.edge.highlighted {
+  stroke: #f5576c;
+  stroke-width: 4;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.edge-arrow {
+  fill: #666;
+  transition: fill 0.3s ease;
+}
+
+.edge:hover .edge-arrow {
+  fill: #667eea;
+}
+
+.edge-label {
+  font-size: 14px;
+  font-weight: bold;
+  fill: #333;
+  pointer-events: none;
+  text-shadow: 1px 1px 2px white, -1px -1px 2px white, 1px -1px 2px white, -1px 1px 2px white;
+}
+
+/* Node Styles */
+.node-group {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.node-group:hover {
+  transform: scale(1.1);
+}
+
+.node-circle {
+  fill: #4facfe;
+  stroke: #333;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+.node-group:hover .node-circle {
+  fill: #667eea;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.6));
+}
+
+.node-circle.visited {
+  fill: #a8e063;
+  stroke: #56ab2f;
+}
+
+.node-circle.current {
+  fill: #f5576c;
+  stroke: #c33;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.node-circle.path {
+  fill: #f093fb;
+  stroke: #764ba2;
+}
+
+.node-label {
+  fill: white;
+  font-size: 16px;
+  font-weight: bold;
+  pointer-events: none;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* Legend */
+.node-legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.legend-node {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+
+.legend-node.default {
+  background: #4facfe;
+}
+
+.legend-node.visited {
+  background: #a8e063;
+  border-color: #56ab2f;
+}
+
+.legend-node.current {
+  background: #f5576c;
+  border-color: #c33;
+}
+
+.legend-node.path {
+  background: #f093fb;
+  border-color: #764ba2;
+}
+
+/* Graph Controls */
+.graph-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #667eea;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+}
+
+.control-btn:active {
+  transform: translateY(0);
+}
